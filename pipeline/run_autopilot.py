@@ -26,7 +26,7 @@ OUT_DEMO_DIR = os.path.join(PIPELINE_ROOT, "out", "demo_pins")
 
 def load_json(path, default):
     if os.path.exists(path):
-        with open(path, encoding="utf-8") as f:
+        with open(path, encoding="utf-8-sig") as f:
             return json.load(f)
     return default
 
