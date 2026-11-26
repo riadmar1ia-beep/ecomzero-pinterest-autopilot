@@ -92,11 +92,16 @@ class BufferGraphQLClient:
         return data.get("channel", {}).get("metadata", {}).get("boards", [])
 
     def list_scheduled_posts(self, channel_id):
+        orgs_data = self.query("query { account { organizations { id } } }")
+        orgs = orgs_data.get("account", {}).get("organizations", [])
+        if not orgs:
+            raise BufferApiError(404, "Aucune organisation Buffer trouvée pour ce jeton.")
+        org_id = orgs[0]["id"]
         q = (
-            "query($id: ChannelId!) { posts(input: { channelId: $id, status: scheduled }) { "
+            "query { posts(first: 20, input: { organizationId: %s, filter: { channelIds: [%s], status: [scheduled] } }) { "
             "edges { node { id text dueAt status } } } }"
-        )
-        data = self.query(q, {"id": channel_id})
+        ) % (json.dumps(org_id), json.dumps(channel_id))
+        data = self.query(q)
         edges = data.get("posts", {}).get("edges", [])
         return [e["node"] for e in edges if "node" in e]
 

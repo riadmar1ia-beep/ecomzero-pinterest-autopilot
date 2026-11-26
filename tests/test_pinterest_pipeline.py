@@ -40,9 +40,11 @@ def make_fake_client(scheduled_posts, fail_mode=None, meta_fields=None):
             return 500, {"error": "Internal Server Error"}
         if fail_mode == "quota_429":
             return 429, {"error": "Rate limit exceeded"}
+        if "organizations" in q:
+            return 200, {"data": {"account": {"organizations": [{"id": "org_1", "name": "My organization"}]}}}
         if "PinterestMetadata" in q:
             return 200, {"data": {"channel": {"id": "ch1", "name": "ecomzeroshop", "metadata": {"boards": [{"id": "b1", "serviceId": "svc_board_1", "name": "Viajes y organización"}]}}}}
-        if "status: scheduled" in q:
+        if "status: [scheduled]" in q:
             return 200, {"data": {"posts": {"edges": [{"node": p} for p in scheduled_posts]}}}
         if "PinterestPostMetadataInput" in q:
             fields = meta_fields if meta_fields is not None else ["boardServiceId", "title", "url"]
