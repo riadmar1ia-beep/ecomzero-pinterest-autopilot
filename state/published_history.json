@@ -1,1 +1,14 @@
-﻿{"last_scheduled_day": null, "history": []}
+{
+  "last_scheduled_day": "2026-11-26",
+  "history": [
+    {
+      "id": "demo-07-esim-vs-roaming-es",
+      "buffer_post_id": "6b08641544b7a2afa8af60c0",
+      "pin_title": "¿eSIM de viaje o roaming? Guía práctica para elegir sin pagar de más",
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/esim-viaje-o-roaming/?utm_source=pinterest&utm_medium=social&utm_campaign=auto_esim_roaming_es_v1",
+      "image_url": "https://raw.githubusercontent.com/riadmar1ia-beep/ecomzero-pinterest-autopilot/main/out/pins/demo-07-esim-vs-roaming-es.png",
+      "due_at_utc": "2026-12-02T18:00:00Z",
+      "dry_run": false
+    }
+  ]
+}
