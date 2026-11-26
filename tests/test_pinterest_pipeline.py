@@ -246,3 +246,36 @@ def test_14_image_validation_rejects_404_wrong_mime_or_missing_local_png():
         dry_run=True, now_utc=NOW, url_fetcher=ok_fetcher, image_head_fetcher=ok_img_head
     )
     assert log_missing_local["status"] == "NO_ELIGIBLE_CANDIDATE" and len(log_missing_local["rejected_candidates"]) == 3
+
+
+def test_15_catalog_auto_renews_when_below_threshold():
+    from pipeline.catalog_renewer import renew_catalog_if_needed
+
+    templates = json.load(open(os.path.join(ROOT, "catalog", "guide_templates.json"), encoding="utf-8"))
+    # Simule un catalogue avec 1 seul candidat inutilisé (< threshold=3)
+    small_cat = {"candidates": [copy.deepcopy(CATALOG["candidates"][0])]}
+    state = {"history": []}
+    report, updated = renew_catalog_if_needed(
+        catalog=small_cat,
+        templates_doc=templates,
+        state=state,
+        pipeline_root=ROOT,
+        font_path=os.path.join(ROOT, "assets", "DejaVuSans-Bold.ttf"),
+        out_pins_dir=os.path.join(ROOT, "out", "pins"),
+        threshold=3,
+        max_add=2,
+        url_fetcher=lambda u: (200, '<h2 id="s-dejar-la-maleta-antes-de-un-vuelo-por-la-tarde">ok</h2>'),
+        render_images=False,
+    )
+    assert report["status"] == "RENEWED"
+    assert len(report["added_ids"]) == 2
+    assert len(updated["candidates"]) == 3
+
+
+def test_16_business_errors_return_nonzero_exit_code():
+    from pipeline.run_autopilot import exit_code_for_status
+
+    for ok_st in ("SCHEDULED_LIVE", "DRY_RUN_SCHEDULED", "QUEUE_TARGET_MET", "QUEUE_FULL_FREE_LIMIT", "IDEMPOTENT_SKIP_ALREADY_SCHEDULED_TODAY"):
+        assert exit_code_for_status(ok_st) == 0, ok_st
+    for err_st in ("API_ERROR", "QUOTA_EXHAUSTED", "ERROR_BOARD_NOT_FOUND", "NO_ELIGIBLE_CANDIDATE"):
+        assert exit_code_for_status(err_st) == 1, err_st

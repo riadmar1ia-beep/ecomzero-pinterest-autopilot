@@ -1,22 +1,21 @@
 name: ECOM-ZERO Pinterest Autopilot (Buffer Free)
 
-# IMPORTANT :
-# Aucun cron permanent n'est activé tant que vous n'avez pas validé le premier test manuel.
-# Après ajout de BUFFER_API_TOKEN (et PIN_IMAGE_BASE_URL) dans GitHub Secrets et 1 test réussi,
-# décommenter le bloc `schedule:` ci-dessous pour l'exécution quotidienne autonome PC éteint.
+# Activation autonome quotidienne (MISSION ECOM-ZERO-PINTEREST-05) :
+# - Déclenchement manuel (workflow_dispatch) : dry-run par défaut.
+# - Déclenchement planifié (schedule) : mode LIVE automatique (1 épingle max/jour, réserve cible 7, plafond Free 10).
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Mode d'exécution (dry-run par défaut ; live programme 1 épingle max si file < 7)"
+        description: "Mode d'exécution manuel (dry-run par défaut)"
         required: true
         default: "dry-run"
         type: choice
         options:
           - dry-run
           - live
-  # schedule:
-  #   - cron: "0 17 * * *"  # 17:00 UTC (18:00 CET) chaque jour — 0 € (minutes illimitées sur dépôt public)
+  schedule:
+    - cron: "0 17 * * *"  # 17:00 UTC chaque jour (18:00 CET / 19:00 CEST) — 0 € sur dépôt public
 
 permissions:
   contents: write
@@ -45,31 +44,53 @@ jobs:
       - name: Run unit & simulation safety checks
         run: python -m pytest tests/test_pinterest_pipeline.py -v
 
-      - name: Run Pinterest queue replenisher (dry-run by default)
+      - name: Renew content catalog and host new PNGs if reserve < 3 (live / schedule only)
+        if: github.event_name == 'schedule' || github.event.inputs.mode == 'live'
+        run: |
+          python -m pipeline.run_autopilot --renew-catalog
+          git config user.name "ecomzero-bot"
+          git config user.email "bot@ecom-zero.local"
+          git add catalog/guides_catalog.json out/pins/ || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(pinterest): auto-renew catalog and host new pin PNGs"
+            git push
+            sleep 5
+          fi
+
+      - name: Run Pinterest queue replenisher (schedule=live, manual=dry-run default)
         env:
           BUFFER_API_TOKEN: ${{ secrets.BUFFER_API_TOKEN }}
           BUFFER_PINTEREST_CHANNEL_ID: ${{ vars.BUFFER_PINTEREST_CHANNEL_ID || '6b0854348541f09ecbb1427e' }}
           PIN_IMAGE_BASE_URL: ${{ secrets.PIN_IMAGE_BASE_URL || 'https://raw.githubusercontent.com/riadmar1ia-beep/ecomzero-pinterest-autopilot/main/out/pins' }}
-          ALLOW_LIVE_SCHEDULE: ${{ github.event.inputs.mode == 'live' && '1' || '0' }}
+          ALLOW_LIVE_SCHEDULE: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'live') && '1' || '0' }}
         run: |
-          if [ "${{ github.event.inputs.mode }}" = "live" ]; then
+          if [ "$ALLOW_LIVE_SCHEDULE" = "1" ]; then
             python -m pipeline.run_autopilot --live
           else
             python -m pipeline.run_autopilot --dry-run
           fi
 
-      - name: Commit updated state/pins if changed in live mode
-        if: github.event.inputs.mode == 'live'
+      - name: Commit updated state after live scheduling
+        if: github.event_name == 'schedule' || github.event.inputs.mode == 'live'
         run: |
           git config user.name "ecomzero-bot"
           git config user.email "bot@ecom-zero.local"
-          git add state/ out/pins/ || true
-          git diff --cached --quiet || (git commit -m "chore(pinterest): update scheduled state and pins" && git push)
+          git add state/published_history.json || true
+          git diff --cached --quiet || (git commit -m "chore(pinterest): update scheduled state" && git push)
 
-      - name: Upload execution log artifact
+      - name: Capture commercial metrics snapshot (read-only D1 + Buffer)
+        if: always()
+        env:
+          BUFFER_API_TOKEN: ${{ secrets.BUFFER_API_TOKEN }}
+          BUFFER_PINTEREST_CHANNEL_ID: ${{ vars.BUFFER_PINTEREST_CHANNEL_ID || '6b0854348541f09ecbb1427e' }}
+        run: python -m pipeline.run_autopilot --metrics-snapshot || true
+
+      - name: Upload execution & metrics artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pinterest-autopilot-log
-          path: out/run_log.json
+          name: pinterest-autopilot-logs
+          path: |
+            out/run_log.json
+            out/metrics_snapshot.json
           retention-days: 14

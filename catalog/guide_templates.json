@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "note": "Pool éditorial vérifié pour le renouvellement autonome du catalogue Pinterest (ES, extensible FR/EN). Zéro prix inventé, zéro promo inventée, offres APPROVED uniquement.",
+  "templates": [
+    {
+      "id": "auto-es-madrid-sol-retiro-v2",
+      "locale": "es",
+      "guide_key": "madrid-day1",
+      "priority_score": 94,
+      "affiliates_approved": ["AFF-TOURS-TRIPTOURS-MONUMENTAL", "AFF-STORAGE-RADICAL", "AFF-ESIM-YESIM"],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/primer-dia-en-madrid-itinerario-a-pie/",
+      "anchor": null,
+      "utm_campaign": "auto_madrid_day1_checklist_v2",
+      "board_name": "Viajes y organización",
+      "badge": "CHECKLIST MADRID · DÍA 1",
+      "title_visual": "3 errores al visitar Madrid el primer día (y cómo evitarlos)",
+      "bullets": [
+        "No cargues maletas antes del check-in: pregunta primero en tu hotel",
+        "Divide el centro en 2 rutas a pie desde Sol (oeste y este)",
+        "Revisa si tu tarifa UE cubre España antes de comprar una eSIM"
+      ],
+      "cta": "Ver guía práctica · ecom-zero.pages.dev",
+      "accent_rgb": [255, 208, 20],
+      "pin_title": "3 errores comunes en tu primer día en Madrid (itinerario a pie + equipaje)",
+      "pin_description": "Aprovecha tu primer día en Madrid sin perder tiempo: cómo organizar el centro a pie desde la Puerta del Sol, qué hacer con la maleta antes del check-in y cuándo necesitas datos móviles extra. Guía con fuentes verificadas y enlaces de afiliado señalados (Trip Tours Madrid, Radical Storage, Yesim).",
+      "keywords": ["errores viajar madrid", "primer dia madrid", "que ver madrid a pie", "consignas madrid"],
+      "media": {
+        "type": "image",
+        "local_path": "assets/media/granvia_metropolis_pexels.jpg",
+        "source_url": "https://www.pexels.com/video/gran-via-s-iconic-metropolis-building-scene-39417079/",
+        "author": "Narli's Journey Book",
+        "license": "Pexels License",
+        "attribution_footer": "Foto: Pexels License · Guía con enlaces de afiliado señalados"
+      }
+    },
+    {
+      "id": "auto-es-madrid-freetour-bus-v2",
+      "locale": "es",
+      "guide_key": "madrid",
+      "priority_score": 91,
+      "affiliates_approved": ["AFF-TOURS-TRIPTOURS-MONUMENTAL", "AFF-ESIM-YESIM"],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/que-ver-en-madrid-free-tour/",
+      "anchor": null,
+      "utm_campaign": "auto_madrid_freetour_bus_v2",
+      "board_name": "Viajes y organización",
+      "badge": "BARAJAS → CENTRO + FREE TOUR",
+      "title_visual": "Cómo ir de Barajas al centro y hacer tu primer paseo",
+      "bullets": [
+        "Bus Exprés Aeropuerto 203 (24 h) hacia Cibeles y Atocha",
+        "Ruta a pie Monumental: Sol → Alcalá → Gran Vía → Retiro",
+        "Free tour explicado con transparencia: reserva gratis, propina libre"
+      ],
+      "cta": "Leer la guía completa · ecom-zero.pages.dev",
+      "accent_rgb": [255, 208, 20],
+      "pin_title": "De Madrid-Barajas al centro + Free Tour Monumental: guía práctica a pie",
+      "pin_description": "Cómo llegar del aeropuerto de Madrid-Barajas al centro en el Bus Exprés 203 y recorrer a pie Puerta del Sol, Gran Vía, Cibeles y el Retiro. Explicación honesta del free tour (aportación voluntaria esperada al final). Contiene enlaces de afiliado señalados (Trip Tours Madrid, Yesim).",
+      "keywords": ["bus expres aeropuerto madrid", "free tour madrid sol", "llegar a madrid barajas"],
+      "media": {
+        "type": "image",
+        "local_path": "assets/media/sol_pexels.jpg",
+        "source_url": "https://www.pexels.com/video/madrid-sol-drone-28159919/",
+        "author": "Steven HAuse",
+        "license": "Pexels License",
+        "attribution_footer": "Foto: Pexels License · Guía con enlaces de afiliado señalados"
+      }
+    },
+    {
+      "id": "auto-es-esim-checklist-v2",
+      "locale": "es",
+      "guide_key": "esim-spain",
+      "priority_score": 93,
+      "affiliates_approved": ["AFF-ESIM-SAILY", "AFF-ESIM-YESIM"],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/esim-espana-fuera-de-la-ue-guia/",
+      "anchor": null,
+      "utm_campaign": "auto_esim_spain_checklist_v2",
+      "board_name": "Viajes y organización",
+      "badge": "CHECKLIST eSIM · ESPAÑA",
+      "title_visual": "Antes de comprar una eSIM para España, revisa esto",
+      "bullets": [
+        "1) Comprueba si tu teléfono admite eSIM y está libre de operador",
+        "2) Desactiva datos en itinerancia en tu SIM principal al aterrizar",
+        "3) Compara opciones con calma: Saily, Yesim y SIM prepago local"
+      ],
+      "cta": "Ver lista de control · ecom-zero.pages.dev",
+      "accent_rgb": [72, 219, 178],
+      "pin_title": "Checklist eSIM para España: 3 comprobaciones antes de aterrizar en Barajas",
+      "pin_description": "Evita errores y cargos de roaming al viajar a España desde fuera de la UE: comprueba compatibilidad eSIM y móvil libre en 2 minutos, cuándo la normativa UE ya te cubre y qué revisar en Saily y Yesim (enlaces de afiliado señalados). Foto: Tony Webster (CC BY 2.0).",
+      "keywords": ["checklist esim espana", "como activar esim espana", "roaming espana fuera ue"],
+      "media": {
+        "type": "image",
+        "local_path": "assets/media/sim_insert_ccby.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Insert_SIM_Card_-_Android_LG_Nexus_5X_-_Project_Fi_(42034815022).jpg",
+        "author": "Tony Webster",
+        "license": "CC BY 2.0",
+        "attribution_footer": "Foto: Tony Webster (CC BY 2.0, Wikimedia) · Enlaces de afiliado señalados"
+      }
+    },
+    {
+      "id": "auto-es-luggage-retiro-v2",
+      "locale": "es",
+      "guide_key": "underseat",
+      "priority_score": 89,
+      "affiliates_approved": ["AFF-STORAGE-RADICAL"],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/medidas-bolso-bajo-asiento/",
+      "anchor": "s-dejar-la-maleta-antes-de-un-vuelo-por-la-tarde",
+      "utm_campaign": "auto_luggage_storage_v2",
+      "board_name": "Viajes y organización",
+      "badge": "VIAJAR SIN MALETAS · MADRID",
+      "title_visual": "Check-out a las 11 h y vuelo por la noche: ¿qué hacer?",
+      "bullets": [
+        "Pregunta primero en recepción si guardan tu equipaje sin coste",
+        "Si necesitas consigna en el centro, revisa horarios y cobertura",
+        "Calcula la vuelta al aeropuerto con margen antes de elegir zona"
+      ],
+      "cta": "Ver opciones de consigna · ecom-zero.pages.dev",
+      "accent_rgb": [90, 210, 255],
+      "pin_title": "Último día en Madrid con maleta: consignas cerca del centro antes del vuelo",
+      "pin_description": "¿Tienes horas libres entre el check-out y tu vuelo desde Madrid-Barajas? Guía práctica para guardar tu equipaje (opciones gratuitas en hotel y consignas en comercios asociados como Radical Storage, enlace de afiliado señalado).",
+      "keywords": ["guardar maleta madrid ultimo dia", "consignas centro madrid", "que hacer en madrid con maleta"],
+      "media": {
+        "type": "image",
+        "local_path": "assets/media/retiro_pexels.jpg",
+        "source_url": "https://www.pexels.com/video/cloud-over-pond-in-retiro-park-10808458/",
+        "author": "Lazar Krstić",
+        "license": "Pexels License",
+        "attribution_footer": "Foto: Pexels License · Guía con enlace de afiliado señalado (Radical Storage)"
+      }
+    },
+    {
+      "id": "auto-es-barajas-delay-v2",
+      "locale": "es",
+      "guide_key": "madrid-delay",
+      "priority_score": 90,
+      "affiliates_approved": ["AFF-FLIGHT-AIRHELP", "AFF-FLIGHT-COMPENSAIR", "AFF-STORAGE-RADICAL"],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/conexion-perdida-madrid-barajas-derechos-ue261/",
+      "anchor": null,
+      "utm_campaign": "auto_madrid_delay_steps_v2",
+      "board_name": "Viajes y organización",
+      "badge": "MADRID-BARAJAS · CE 261/2004",
+      "title_visual": "Qué guardar si tu vuelo se retrasa en Madrid-Barajas",
+      "bullets": [
+        "Tarjeta de embarque, reserva única y recibos de comida/hotel",
+        "Reclamar tú mismo a la aerolínea o ante AESA cuesta 0 €",
+        "Si prefieres delegar: compara tarifas oficiales AirHelp y Compensair"
+      ],
+      "cta": "Ver pasos y límites · ecom-zero.pages.dev",
+      "accent_rgb": [255, 118, 102],
+      "pin_title": "Retraso o conexión perdida en Barajas: documentos clave y reclamación gratis",
+      "pin_description": "Qué pruebas conservar en el aeropuerto de Madrid-Barajas, cuáles son los límites del Reglamento CE 261/2004 (reserva única, regla de aerolínea UE/EEE) y cómo reclamar gratis ante la aerolínea o AESA antes de valorar intermediarios (enlaces de afiliado AirHelp y Compensair señalados). Foto: Daniel from Glasgow (CC BY 2.0).",
+      "keywords": ["reclamar retraso vuelo barajas", "documentos indemnizacion vuelo", "aesa reclamacion vuelo"],
+      "media": {
+        "type": "image",
+        "local_path": "assets/media/barajas_t4_ccby.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Adolfo_Su%C3%A1rez_Madrid%E2%80%93Barajas_Airport_(6)_(16844097831).jpg",
+        "author": "Daniel from Glasgow, United Kingdom",
+        "license": "CC BY 2.0",
+        "attribution_footer": "Foto: Daniel from Glasgow (CC BY 2.0, Wikimedia) · Enlaces de afiliado señalados"
+      }
+    }
+  ]
+}
