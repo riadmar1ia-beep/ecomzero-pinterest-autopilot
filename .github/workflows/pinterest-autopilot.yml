@@ -21,6 +21,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: pinterest-autopilot-queue
+  cancel-in-progress: false
+
 jobs:
   replenish-pinterest-queue:
     runs-on: ubuntu-latest

@@ -94,6 +94,7 @@ def main():
         state=state,
         channel_id=channel_id,
         image_base_url=image_base_url,
+        local_pins_dir=os.path.join(PIPELINE_ROOT, "out", "pins"),
         dry_run=dry_run,
     )
     os.makedirs(os.path.join(PIPELINE_ROOT, "out"), exist_ok=True)

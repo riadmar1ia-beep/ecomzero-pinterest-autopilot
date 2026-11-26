@@ -20,6 +20,9 @@ class BufferApiError(RuntimeError):
         self.is_quota = is_quota
 
 
+VALID_SCHEDULED_STATUSES = {"scheduled", "buffer", "queued"}
+
+
 def scrub_secret(text, token):
     return str(text).replace(token, "***") if token else str(text)
 
@@ -149,9 +152,20 @@ class BufferGraphQLClient:
             raise BufferApiError(422, f"Champ Destination Link 'url' absent du schéma Buffer actif: {meta_fields}")
 
         data = self.query(mutation, variables)
-        res = data.get("createPost", {})
+        res = data.get("createPost")
+        if not isinstance(res, dict):
+            raise BufferApiError(502, f"Réponse createPost vide ou inattendue: {res}")
         if "message" in res and "post" not in res:
-            msg = res["message"]
+            msg = str(res["message"])
             is_quota = "limit" in msg.lower() or "quota" in msg.lower() or "free plan" in msg.lower()
             raise BufferApiError(422, f"MutationError: {msg}", is_quota=is_quota)
-        return {"dry_run": False, "post": res.get("post")}
+        post = res.get("post")
+        if not isinstance(post, dict):
+            raise BufferApiError(502, f"Objet post absent dans la réponse Buffer: {res}")
+        post_id = str(post.get("id") or "").strip()
+        if not post_id:
+            raise BufferApiError(502, f"Identifiant post vide dans la réponse Buffer: {post}")
+        status = str(post.get("status") or "").strip().lower()
+        if status not in VALID_SCHEDULED_STATUSES:
+            raise BufferApiError(502, f"Statut de programmation Buffer incohérent: '{status}' (post {post_id})")
+        return {"dry_run": False, "post": post}

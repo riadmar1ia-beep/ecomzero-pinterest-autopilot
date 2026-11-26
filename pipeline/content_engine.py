@@ -71,6 +71,52 @@ def validate_destination_url(url, anchor=None, fetcher=None):
     return True, "OK"
 
 
+def validate_image_asset(image_url, local_png_path=None, head_fetcher=None):
+    """
+    Vérifie avant toute mutation Buffer :
+    - URL HTTPS publique directe (sans redirection) répondant HTTP 200 avec Content-Type image/png.
+    - Si local_png_path est fourni : existence du fichier PNG et ratio vertical compatible Pinterest.
+    """
+    if not image_url or not image_url.startswith("https://"):
+        return False, f"URL image non HTTPS: '{image_url}'"
+
+    if local_png_path is not None:
+        if not os.path.exists(local_png_path):
+            return False, f"Fichier PNG local introuvable: {local_png_path}"
+        try:
+            with Image.open(local_png_path) as im:
+                w, h = im.size
+                ratio = w / h if h else 0
+                if im.format != "PNG" or w < 600 or h < 900 or not (0.5 <= ratio <= 0.85):
+                    return False, f"Format image incompatible Pinterest: {im.format} {w}x{h}"
+        except Exception as e:
+            return False, f"Image PNG locale illisible: {type(e).__name__}"
+
+    class _NoRedirect(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, *args, **kwargs):
+            return None
+
+    try:
+        if head_fetcher is not None:
+            status, content_type = head_fetcher(image_url)
+        else:
+            req = urllib.request.Request(image_url, method="HEAD", headers={"User-Agent": "ecomzero-pinterest-check/1.0"})
+            opener = urllib.request.build_opener(_NoRedirect)
+            with opener.open(req, timeout=15) as r:
+                status = r.status
+                content_type = r.headers.get("Content-Type", "")
+    except urllib.error.HTTPError as e:
+        return False, f"Image HTTPS inaccessible (HTTP {e.code}) sur {image_url}"
+    except Exception as e:
+        return False, f"Erreur réseau image sur {image_url}: {type(e).__name__}"
+
+    if status != 200:
+        return False, f"Statut HTTP image invalide ({status}) sur {image_url}"
+    if not str(content_type).lower().startswith("image/png"):
+        return False, f"Content-Type image invalide ('{content_type}') sur {image_url}"
+    return True, "OK"
+
+
 def is_duplicate(candidate, history_entries, scheduled_posts):
     cand_title = normalize_text(candidate.get("pin_title"))
     cand_desc = normalize_text(candidate.get("pin_description"))
@@ -87,7 +133,9 @@ def is_duplicate(candidate, history_entries, scheduled_posts):
     for p in scheduled_posts:
         pt = normalize_text(p.get("text", ""))
         if cand_desc and cand_desc[:80] in pt:
-            return True, "Description déjà présente dans la file Buffer active."
+            return True, f"Description déjà présente dans Buffer (post {p.get('id', '?')})."
+        if cand_title and cand_title in pt:
+            return True, f"Titre déjà présent dans Buffer (post {p.get('id', '?')})."
     return False, "OK"
 
 
