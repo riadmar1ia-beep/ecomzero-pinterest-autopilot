@@ -85,7 +85,7 @@ class BufferGraphQLClient:
 
     def list_pinterest_boards(self, channel_id):
         q = (
-            "query($id: ID!) { channel(input: { id: $id }) { id name metadata { "
+            "query($id: ChannelId!) { channel(input: { id: $id }) { id name metadata { "
             "... on PinterestMetadata { boards { id serviceId name } } } } }"
         )
         data = self.query(q, {"id": channel_id})
@@ -93,7 +93,7 @@ class BufferGraphQLClient:
 
     def list_scheduled_posts(self, channel_id):
         q = (
-            "query($id: ID!) { posts(input: { channelId: $id, status: scheduled }) { "
+            "query($id: ChannelId!) { posts(input: { channelId: $id, status: scheduled }) { "
             "edges { node { id text dueAt status } } } }"
         )
         data = self.query(q, {"id": channel_id})
