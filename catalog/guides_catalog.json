@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "supported_locales": ["es", "fr", "en"],
+  "default_locale": "es",
+  "allowed_licenses": [
+    "Pexels License",
+    "CC0",
+    "Public domain",
+    "CC BY 2.0",
+    "CC BY 3.0",
+    "CC BY 4.0"
+  ],
+  "candidates": [
+    {
+      "id": "demo-07-esim-vs-roaming-es",
+      "locale": "es",
+      "guide_key": "esim",
+      "priority_score": 95,
+      "affiliates_approved": ["AFF-ESIM-SAILY", "AFF-ESIM-YESIM"],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/esim-viaje-o-roaming/",
+      "anchor": null,
+      "utm_campaign": "auto_esim_roaming_es_v1",
+      "board_name": "Viajes y organización",
+      "badge": "COMPARATIVA eSIM · 2026",
+      "title_visual": "¿eSIM de viaje o roaming? Cómo decidir en 2 minutos",
+      "bullets": [
+        "Comprueba primero si tu tarifa UE ya cubre el destino",
+        "4 proveedores comparados con criterios claros (sin ranking)",
+        "Cobertura, validez, hotspot y compatibilidad verificados"
+      ],
+      "cta": "Comparar antes de pagar · ecom-zero.pages.dev",
+      "accent_rgb": [72, 219, 178],
+      "pin_title": "¿eSIM de viaje o roaming? Guía práctica para elegir sin pagar de más",
+      "pin_description": "Descubre cuándo tu tarifa ya te cubre en Europa y cuándo conviene una eSIM de viaje. Comparamos 4 proveedores (Saily y Yesim con enlaces de afiliado señalados; Airalo y Holafly en enlace directo) con los criterios clave: cobertura, validez y compartir datos. Foto: Blakegripling ph (CC0).",
+      "keywords": ["esim o roaming", "mejor esim viaje", "esim europa consejos", "saily yesim comparativa"],
+      "media": {
+        "type": "image",
+        "local_path": "drafts/affiliate-first-05/videos/_media_cache/sim_tray_cc0.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Galaxy_S7_clone_dual-SIM_tray.jpg",
+        "author": "Blakegripling ph",
+        "license": "CC0",
+        "attribution_footer": "Foto: Blakegripling ph (CC0, Wikimedia) · Enlaces de afiliado señalados"
+      }
+    },
+    {
+      "id": "demo-08-retraso-vuelo-ue261-es",
+      "locale": "es",
+      "guide_key": "flight",
+      "priority_score": 92,
+      "affiliates_approved": ["AFF-FLIGHT-AIRHELP", "AFF-FLIGHT-COMPENSAIR"],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/retraso-vuelo-indemnizacion-ue261/",
+      "anchor": "s-prefieres-no-hacerlo-tu",
+      "utm_campaign": "auto_flight_eu261_es_v1",
+      "board_name": "Viajes y organización",
+      "badge": "VUELO RETRASADO · HASTA 600 €",
+      "title_visual": "Vuelo retrasado 3 h: 250 €, 400 € o 600 € según distancia",
+      "bullets": [
+        "Reclamar directo a la aerolínea es gratis (conservas el 100 %)",
+        "Comida, hotel y reembolso tras 5 h: qué debe ofrecerte",
+        "Comparativa transparente: reclamar solo vs AirHelp / Compensair"
+      ],
+      "cta": "Ver baremo y pasos · ecom-zero.pages.dev",
+      "accent_rgb": [255, 118, 102],
+      "pin_title": "Vuelo retrasado o cancelado: derechos UE 261/2004 (250 €, 400 € o 600 €)",
+      "pin_description": "Aprende cuándo tienes derecho a indemnización por retraso de 3 horas o más en tu destino final, qué asistencia debe darte la aerolínea y cómo reclamar gratis paso a paso. Incluye tabla transparente de comisiones de AirHelp y Compensair (enlaces de afiliado señalados). Foto: 5snake5 (CC0).",
+      "keywords": ["vuelo retrasado indemnizacion", "reglamento 261 2004", "reclamar vuelo cancelado", "airhelp compensair"],
+      "media": {
+        "type": "image",
+        "local_path": "drafts/affiliate-first-05/videos/_media_cache/barajas_cc0.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Madrid-Barajas_Airport.jpg",
+        "author": "5snake5",
+        "license": "CC0",
+        "attribution_footer": "Foto: 5snake5 (CC0, Wikimedia) · Enlaces de afiliado señalados"
+      }
+    },
+    {
+      "id": "demo-09-madrid-cibeles-retiro-es",
+      "locale": "es",
+      "guide_key": "madrid-day1",
+      "priority_score": 90,
+      "affiliates_approved": ["AFF-TOURS-TRIPTOURS-MONUMENTAL", "AFF-STORAGE-RADICAL", "AFF-ESIM-YESIM"],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/primer-dia-en-madrid-itinerario-a-pie/",
+      "anchor": "s-dos-recorridos-a-pie-desde-la-puerta-del-sol",
+      "utm_campaign": "auto_madrid_cibeles_es_v1",
+      "board_name": "Viajes y organización",
+      "badge": "RUTA MADRID · EJE MONUMENTAL",
+      "title_visual": "De Puerta del Sol al Retiro: el paseo clave de Madrid",
+      "bullets": [
+        "Alcalá → Metrópolis → Gran Vía → Cibeles → Puerta de Alcalá",
+        "2 h 30 a pie: hazlo por tu cuenta o en free tour (propina libre)",
+        "Consejos de equipaje y datos móviles para el primer día"
+      ],
+      "cta": "Seguir la ruta paso a paso · ecom-zero.pages.dev",
+      "accent_rgb": [255, 208, 20],
+      "pin_title": "Ruta a pie de Sol a Cibeles y el Retiro: lo esencial de Madrid en 2 h 30",
+      "pin_description": "Recorre el eje monumental de Madrid sin transporte público: Puerta del Sol, Calle de Alcalá, Gran Vía, Palacio de Cibeles y Parque del Retiro. Incluye explicación honesta del free tour (reserva gratis, aportación esperada al final) y consignas cercanas. Enlaces de afiliado señalados.",
+      "keywords": ["palacio de cibeles madrid", "ruta madrid a pie", "sol a retiro caminando", "visitar madrid 1 dia"],
+      "media": {
+        "type": "video_frame",
+        "local_path": "drafts/affiliate-first-05/videos/v2_clips/cibeles.mp4",
+        "frame_sec": "3.0",
+        "source_url": "https://www.pexels.com/video/palacio-de-cibeles-28159811/",
+        "author": "Steven HAuse",
+        "license": "Pexels License",
+        "attribution_footer": "Foto: Pexels License · Guía con enlaces de afiliado señalados"
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+name: ECOM-ZERO Pinterest Autopilot (Buffer Free)
+
+# IMPORTANT :
+# Aucun cron permanent n'est activé tant que vous n'avez pas validé le premier test manuel.
+# Après ajout de BUFFER_API_TOKEN (et PIN_IMAGE_BASE_URL) dans GitHub Secrets et 1 test réussi,
+# décommenter le bloc `schedule:` ci-dessous pour l'exécution quotidienne autonome PC éteint.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Mode d'exécution (dry-run par défaut ; live programme 1 épingle max si file < 7)"
+        required: true
+        default: "dry-run"
+        type: choice
+        options:
+          - dry-run
+          - live
+  # schedule:
+  #   - cron: "0 17 * * *"  # 17:00 UTC (18:00 CET) chaque jour — 0 € (minutes illimitées sur dépôt public)
+
+permissions:
+  contents: write
+
+jobs:
+  replenish-pinterest-queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11 with pip cache
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install minimal dependencies (Pillow + pytest)
+        run: python -m pip install --upgrade pip pillow pytest
+
+      - name: Run unit & simulation safety checks
+        run: python -m pytest tests/test_pinterest_pipeline.py -v
+
+      - name: Run Pinterest queue replenisher (dry-run by default)
+        env:
+          BUFFER_API_TOKEN: ${{ secrets.BUFFER_API_TOKEN }}
+          BUFFER_PINTEREST_CHANNEL_ID: ${{ vars.BUFFER_PINTEREST_CHANNEL_ID || '6b0854348541f09ecbb1427e' }}
+          PIN_IMAGE_BASE_URL: ${{ secrets.PIN_IMAGE_BASE_URL || 'https://raw.githubusercontent.com/riadmar1ia-beep/ecomzero-pinterest-autopilot/main/out/pins' }}
+          ALLOW_LIVE_SCHEDULE: ${{ github.event.inputs.mode == 'live' && '1' || '0' }}
+        run: |
+          if [ "${{ github.event.inputs.mode }}" = "live" ]; then
+            python -m pipeline.run_autopilot --live
+          else
+            python -m pipeline.run_autopilot --dry-run
+          fi
+
+      - name: Commit updated state/pins if changed in live mode
+        if: github.event.inputs.mode == 'live'
+        run: |
+          git config user.name "ecomzero-bot"
+          git config user.email "bot@ecom-zero.local"
+          git add state/ out/pins/ || true
+          git diff --cached --quiet || (git commit -m "chore(pinterest): update scheduled state and pins" && git push)
+
+      - name: Upload execution log artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pinterest-autopilot-log
+          path: out/run_log.json
+          retention-days: 14
