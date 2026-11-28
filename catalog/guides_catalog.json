@@ -1,6 +1,10 @@
 {
   "schema_version": "1.0",
-  "supported_locales": ["es", "fr", "en"],
+  "supported_locales": [
+    "es",
+    "fr",
+    "en"
+  ],
   "default_locale": "es",
   "allowed_licenses": [
     "Pexels License",
@@ -16,7 +20,10 @@
       "locale": "es",
       "guide_key": "esim",
       "priority_score": 95,
-      "affiliates_approved": ["AFF-ESIM-SAILY", "AFF-ESIM-YESIM"],
+      "affiliates_approved": [
+        "AFF-ESIM-SAILY",
+        "AFF-ESIM-YESIM"
+      ],
       "destination_url": "https://ecom-zero.pages.dev/es/viajes/esim-viaje-o-roaming/",
       "anchor": null,
       "utm_campaign": "auto_esim_roaming_es_v1",
@@ -29,10 +36,19 @@
         "Cobertura, validez, hotspot y compatibilidad verificados"
       ],
       "cta": "Comparar antes de pagar · ecom-zero.pages.dev",
-      "accent_rgb": [72, 219, 178],
+      "accent_rgb": [
+        72,
+        219,
+        178
+      ],
       "pin_title": "¿eSIM de viaje o roaming? Guía práctica para elegir sin pagar de más",
       "pin_description": "Descubre cuándo tu tarifa ya te cubre en Europa y cuándo conviene una eSIM de viaje. Comparamos 4 proveedores (Saily y Yesim con enlaces de afiliado señalados; Airalo y Holafly en enlace directo) con los criterios clave: cobertura, validez y compartir datos. Foto: Blakegripling ph (CC0).",
-      "keywords": ["esim o roaming", "mejor esim viaje", "esim europa consejos", "saily yesim comparativa"],
+      "keywords": [
+        "esim o roaming",
+        "mejor esim viaje",
+        "esim europa consejos",
+        "saily yesim comparativa"
+      ],
       "media": {
         "type": "image",
         "local_path": "drafts/affiliate-first-05/videos/_media_cache/sim_tray_cc0.jpg",
@@ -47,7 +63,10 @@
       "locale": "es",
       "guide_key": "flight",
       "priority_score": 92,
-      "affiliates_approved": ["AFF-FLIGHT-AIRHELP", "AFF-FLIGHT-COMPENSAIR"],
+      "affiliates_approved": [
+        "AFF-FLIGHT-AIRHELP",
+        "AFF-FLIGHT-COMPENSAIR"
+      ],
       "destination_url": "https://ecom-zero.pages.dev/es/viajes/retraso-vuelo-indemnizacion-ue261/",
       "anchor": "s-prefieres-no-hacerlo-tu",
       "utm_campaign": "auto_flight_eu261_es_v1",
@@ -60,10 +79,19 @@
         "Comparativa transparente: reclamar solo vs AirHelp / Compensair"
       ],
       "cta": "Ver baremo y pasos · ecom-zero.pages.dev",
-      "accent_rgb": [255, 118, 102],
+      "accent_rgb": [
+        255,
+        118,
+        102
+      ],
       "pin_title": "Vuelo retrasado o cancelado: derechos UE 261/2004 (250 €, 400 € o 600 €)",
       "pin_description": "Aprende cuándo tienes derecho a indemnización por retraso de 3 horas o más en tu destino final, qué asistencia debe darte la aerolínea y cómo reclamar gratis paso a paso. Incluye tabla transparente de comisiones de AirHelp y Compensair (enlaces de afiliado señalados). Foto: 5snake5 (CC0).",
-      "keywords": ["vuelo retrasado indemnizacion", "reglamento 261 2004", "reclamar vuelo cancelado", "airhelp compensair"],
+      "keywords": [
+        "vuelo retrasado indemnizacion",
+        "reglamento 261 2004",
+        "reclamar vuelo cancelado",
+        "airhelp compensair"
+      ],
       "media": {
         "type": "image",
         "local_path": "drafts/affiliate-first-05/videos/_media_cache/barajas_cc0.jpg",
@@ -78,7 +106,11 @@
       "locale": "es",
       "guide_key": "madrid-day1",
       "priority_score": 90,
-      "affiliates_approved": ["AFF-TOURS-TRIPTOURS-MONUMENTAL", "AFF-STORAGE-RADICAL", "AFF-ESIM-YESIM"],
+      "affiliates_approved": [
+        "AFF-TOURS-TRIPTOURS-MONUMENTAL",
+        "AFF-STORAGE-RADICAL",
+        "AFF-ESIM-YESIM"
+      ],
       "destination_url": "https://ecom-zero.pages.dev/es/viajes/primer-dia-en-madrid-itinerario-a-pie/",
       "anchor": "s-dos-recorridos-a-pie-desde-la-puerta-del-sol",
       "utm_campaign": "auto_madrid_cibeles_es_v1",
@@ -91,15 +123,110 @@
         "Consejos de equipaje y datos móviles para el primer día"
       ],
       "cta": "Seguir la ruta paso a paso · ecom-zero.pages.dev",
-      "accent_rgb": [255, 208, 20],
+      "accent_rgb": [
+        255,
+        208,
+        20
+      ],
       "pin_title": "Ruta a pie de Sol a Cibeles y el Retiro: lo esencial de Madrid en 2 h 30",
       "pin_description": "Recorre el eje monumental de Madrid sin transporte público: Puerta del Sol, Calle de Alcalá, Gran Vía, Palacio de Cibeles y Parque del Retiro. Incluye explicación honesta del free tour (reserva gratis, aportación esperada al final) y consignas cercanas. Enlaces de afiliado señalados.",
-      "keywords": ["palacio de cibeles madrid", "ruta madrid a pie", "sol a retiro caminando", "visitar madrid 1 dia"],
+      "keywords": [
+        "palacio de cibeles madrid",
+        "ruta madrid a pie",
+        "sol a retiro caminando",
+        "visitar madrid 1 dia"
+      ],
       "media": {
         "type": "video_frame",
         "local_path": "drafts/affiliate-first-05/videos/v2_clips/cibeles.mp4",
         "frame_sec": "3.0",
         "source_url": "https://www.pexels.com/video/palacio-de-cibeles-28159811/",
+        "author": "Steven HAuse",
+        "license": "Pexels License",
+        "attribution_footer": "Foto: Pexels License · Guía con enlaces de afiliado señalados"
+      }
+    },
+    {
+      "id": "auto-es-madrid-sol-retiro-v2",
+      "locale": "es",
+      "guide_key": "madrid-day1",
+      "priority_score": 94,
+      "affiliates_approved": [
+        "AFF-TOURS-TRIPTOURS-MONUMENTAL",
+        "AFF-STORAGE-RADICAL",
+        "AFF-ESIM-YESIM"
+      ],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/primer-dia-en-madrid-itinerario-a-pie/",
+      "anchor": null,
+      "utm_campaign": "auto_madrid_day1_checklist_v2",
+      "board_name": "Viajes y organización",
+      "badge": "CHECKLIST MADRID · DÍA 1",
+      "title_visual": "3 errores al visitar Madrid el primer día (y cómo evitarlos)",
+      "bullets": [
+        "No cargues maletas antes del check-in: pregunta primero en tu hotel",
+        "Divide el centro en 2 rutas a pie desde Sol (oeste y este)",
+        "Revisa si tu tarifa UE cubre España antes de comprar una eSIM"
+      ],
+      "cta": "Ver guía práctica · ecom-zero.pages.dev",
+      "accent_rgb": [
+        255,
+        208,
+        20
+      ],
+      "pin_title": "3 errores comunes en tu primer día en Madrid (itinerario a pie + equipaje)",
+      "pin_description": "Aprovecha tu primer día en Madrid sin perder tiempo: cómo organizar el centro a pie desde la Puerta del Sol, qué hacer con la maleta antes del check-in y cuándo necesitas datos móviles extra. Guía con fuentes verificadas y enlaces de afiliado señalados (Trip Tours Madrid, Radical Storage, Yesim).",
+      "keywords": [
+        "errores viajar madrid",
+        "primer dia madrid",
+        "que ver madrid a pie",
+        "consignas madrid"
+      ],
+      "media": {
+        "type": "image",
+        "local_path": "assets/media/granvia_metropolis_pexels.jpg",
+        "source_url": "https://www.pexels.com/video/gran-via-s-iconic-metropolis-building-scene-39417079/",
+        "author": "Narli's Journey Book",
+        "license": "Pexels License",
+        "attribution_footer": "Foto: Pexels License · Guía con enlaces de afiliado señalados"
+      }
+    },
+    {
+      "id": "auto-es-madrid-freetour-bus-v2",
+      "locale": "es",
+      "guide_key": "madrid",
+      "priority_score": 91,
+      "affiliates_approved": [
+        "AFF-TOURS-TRIPTOURS-MONUMENTAL",
+        "AFF-ESIM-YESIM"
+      ],
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/que-ver-en-madrid-free-tour/",
+      "anchor": null,
+      "utm_campaign": "auto_madrid_freetour_bus_v2",
+      "board_name": "Viajes y organización",
+      "badge": "BARAJAS → CENTRO + FREE TOUR",
+      "title_visual": "Cómo ir de Barajas al centro y hacer tu primer paseo",
+      "bullets": [
+        "Bus Exprés Aeropuerto 203 (24 h) hacia Cibeles y Atocha",
+        "Ruta a pie Monumental: Sol → Alcalá → Gran Vía → Retiro",
+        "Free tour explicado con transparencia: reserva gratis, propina libre"
+      ],
+      "cta": "Leer la guía completa · ecom-zero.pages.dev",
+      "accent_rgb": [
+        255,
+        208,
+        20
+      ],
+      "pin_title": "De Madrid-Barajas al centro + Free Tour Monumental: guía práctica a pie",
+      "pin_description": "Cómo llegar del aeropuerto de Madrid-Barajas al centro en el Bus Exprés 203 y recorrer a pie Puerta del Sol, Gran Vía, Cibeles y el Retiro. Explicación honesta del free tour (aportación voluntaria esperada al final). Contiene enlaces de afiliado señalados (Trip Tours Madrid, Yesim).",
+      "keywords": [
+        "bus expres aeropuerto madrid",
+        "free tour madrid sol",
+        "llegar a madrid barajas"
+      ],
+      "media": {
+        "type": "image",
+        "local_path": "assets/media/sol_pexels.jpg",
+        "source_url": "https://www.pexels.com/video/madrid-sol-drone-28159919/",
         "author": "Steven HAuse",
         "license": "Pexels License",
         "attribution_footer": "Foto: Pexels License · Guía con enlaces de afiliado señalados"
