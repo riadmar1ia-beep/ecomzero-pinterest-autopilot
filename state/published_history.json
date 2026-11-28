@@ -1,5 +1,5 @@
 {
-  "last_scheduled_day": "2026-11-26",
+  "last_scheduled_day": "2026-11-28",
   "history": [
     {
       "id": "demo-07-esim-vs-roaming-es",
@@ -8,6 +8,15 @@
       "destination_url": "https://ecom-zero.pages.dev/es/viajes/esim-viaje-o-roaming/?utm_source=pinterest&utm_medium=social&utm_campaign=auto_esim_roaming_es_v1",
       "image_url": "https://raw.githubusercontent.com/riadmar1ia-beep/ecomzero-pinterest-autopilot/main/out/pins/demo-07-esim-vs-roaming-es.png",
       "due_at_utc": "2026-12-02T18:00:00Z",
+      "dry_run": false
+    },
+    {
+      "id": "auto-es-madrid-sol-retiro-v2",
+      "buffer_post_id": "6b0a1ef5eada83daa6aee90e",
+      "pin_title": "3 errores comunes en tu primer día en Madrid (itinerario a pie + equipaje)",
+      "destination_url": "https://ecom-zero.pages.dev/es/viajes/primer-dia-en-madrid-itinerario-a-pie/?utm_source=pinterest&utm_medium=social&utm_campaign=auto_madrid_day1_checklist_v2",
+      "image_url": "https://raw.githubusercontent.com/riadmar1ia-beep/ecomzero-pinterest-autopilot/main/out/pins/auto-es-madrid-sol-retiro-v2.png",
+      "due_at_utc": "2026-12-03T18:00:00Z",
       "dry_run": false
     }
   ]
